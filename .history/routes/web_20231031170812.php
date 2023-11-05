@@ -1,0 +1,32 @@
+<?php
+
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\SuplierController;
+use App\Http\Controllers\TransaksiDetailController;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+Route::get('/', fn () => redirect()->route('login'));
+
+Route::middleware(['auth:sanctum','verified'])->get('/dashboard',function (){
+    return view('welcome');
+})->name('dashboard');
+
+Route::resource('barangs',BarangController::class);
+
+Route::resource('customers',CustomerController::class);
+
+Route::resource('supliers',SuplierController::class);
+
+Route::resource('transaksis',TransaksiDetailController::class);
+
