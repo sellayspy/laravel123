@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
 @section('title')
-   Transaksi Pembelian
+   Daftar Pembelian
 @endsection
 
 @section('breadcrumb')
     @parent
-    <li class="active">Transaksi Pembelian</li>
+    <li class="active">Daftar Pembelian</li>
 @endsection
 
 @section('contents')
@@ -61,7 +61,7 @@
         });
 
         function addForm() {
-            $('#modal-supplier').modal('show');
+            $('#modal-form').modal('show');
         }
 
         function editForm(url) {

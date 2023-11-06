@@ -21,13 +21,13 @@ class PembelianController extends Controller
      * Show the form for creating a new resource.
      */
     public function create($id)
-    {
+   /* {
         $pembelian = new Pembelian();
-        $pembelian->id_suplier   = $id;
-        $pembelian->totalItem    = 0;
-        $pembelian->totalHarga   = 0;
-        $pembelian->diskon       = 0;
-        $pembelian->bayar        = 0;
+        $pembelian->id_suplier = $id;
+        $pembelian->totalItem = 0;
+        $pembelian->totalHarga = 0;
+        $pembelian->diskon = 0;
+        $pembelian->bayar = 0;
         $pembelian->save();
 
         session(['id_pembelian' => $pembelian->id_pembelian]);

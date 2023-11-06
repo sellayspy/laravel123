@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
 @section('title')
-   Transaksi Pembelian
+   Daftar Pembelian
 @endsection
 
 @section('breadcrumb')
     @parent
-    <li class="active">Transaksi Pembelian</li>
+    <li class="active">Daftar Pembelian</li>
 @endsection
 
 @section('contents')
@@ -60,8 +60,14 @@
             });
         });
 
-        function addForm() {
-            $('#modal-supplier').modal('show');
+        function addForm(url) {
+            $('#modal-form').modal('show');
+            $('#modal-form .modal-title').text('Tambah Customer');
+
+           $('#modal-form form')[0].reset();
+           $('#modal-form form').attr('action',url);
+            $('#modal-form [name=_method]').val('post');
+            $('#modal-form [name=namaCustomer]').focus();
         }
 
         function editForm(url) {
