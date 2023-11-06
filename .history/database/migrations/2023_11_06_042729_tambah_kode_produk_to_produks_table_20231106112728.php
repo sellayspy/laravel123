@@ -12,9 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('produks', function (Blueprint $table) {
-            $table->string('kodeProduk')
-            ->unique()
-            ->after('id_kategori');
+            //
         });
     }
 
@@ -24,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('produks', function (Blueprint $table) {
-            $table->dropColumn('kodeProduk');
+            //
         });
     }
 };
